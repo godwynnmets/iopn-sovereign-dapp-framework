@@ -1,0 +1,51 @@
+{
+  "name": "iopn-sovereign-dapp-framework",
+  "version": "0.1.0-alpha",
+  "description": "Universal, production-grade dApp framework for IOPn Chain. Build sovereign dApps with verifiable credentials, governance, reputation systems, and IOPn ecosystem integration.",
+  "private": true,
+  "workspaces": [
+    "smart-contracts",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd smart-contracts && npm install && cd ../frontend && npm install && cd ..",
+    "build:contracts": "cd smart-contracts && npm run compile",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:contracts && npm run build:frontend",
+    "test:contracts": "cd smart-contracts && npm test",
+    "test": "npm run test:contracts",
+    "dev:contracts": "cd smart-contracts && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:frontend\" || true",
+    "deploy:testnet": "cd smart-contracts && npm run deploy:testnet",
+    "deploy:mainnet": "cd smart-contracts && npm run deploy:mainnet",
+    "audit": "cd smart-contracts && npm run audit || true",
+    "lint": "cd smart-contracts && npm run lint && cd ../frontend && npm run lint || true"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "iopn",
+    "blockchain",
+    "dapp",
+    "solidity",
+    "react",
+    "ethereum",
+    "web3",
+    "sovereign",
+    "credentials",
+    "governance",
+    "reputation"
+  ],
+  "author": "IOPn Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godwynnmets/iopn-sovereign-dapp-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/godwynnmets/iopn-sovereign-dapp-framework/issues"
+  },
+  "homepage": "https://github.com/godwynnmets/iopn-sovereign-dapp-framework#readme"
+}
